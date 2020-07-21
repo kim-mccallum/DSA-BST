@@ -11,7 +11,7 @@ class BinarySearchTree {
   //   insert - recursive
   insert(key, value) {
     // if the key is empty then the key being inserted is going to be the root
-    if (this.key === null) {
+    if (this.key == null) {
       this.key = key;
       this.value = value;
     }
@@ -19,7 +19,7 @@ class BinarySearchTree {
     // want to insert. If the new key is less than the node's key, then the new key needs
     // to live on the LH branch.
     else if (key < this.key) {
-      if (this.left === null) {
+      if (this.left == null) {
         this.left = new BinarySearchTree(key, value, this);
       }
       // if the node has an existing LF child, we recursively call the insert method.
@@ -31,7 +31,7 @@ class BinarySearchTree {
     // Similarly, if the new key is greater than the node's key, then you do the same
     // thing but on the RH side
     else {
-      if (this.right === null) {
+      if (this.right == null) {
         this.right = new BinarySearchTree(key, value, this);
       } else {
         this.right.insert(key, value);
@@ -40,7 +40,7 @@ class BinarySearchTree {
   }
   find(key) {
     //   if the item is at the root, return
-    if (this.key === key) {
+    if (this.key == key) {
       return this.value;
     } else if (key < this.key && this.left) {
       /* If the item you are looking for is less than the root 
